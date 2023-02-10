@@ -9,27 +9,42 @@
 import SwiftUI
 
 struct userdatacollection2: View {
-    @State private var avg_bedtime = ""
-    @State private var avg_wakeup = ""
-    @State private var avg_hours_of_sleep = ""
-    
+
+    @State private var wakeUpDate = Date()
+    @State private var bedTimeDate = Date()
+
     var body: some View {
-        Form {
-            Section(header: Text("Tell Us More About You")) {
-                TextField("How many hours of sleep do you get each night on average?", text: $avg_hours_of_sleep)
-                    .keyboardType(.numberPad)
-                TextField("What time do you wake up usally?", text: $avg_wakeup)
-                    .keyboardType(.numberPad)
-                TextField("What time do you go to bed usally?", text: $avg_bedtime)
-                    .keyboardType(.numberPad)
+        VStack {
+            Form {
+                Section(header:Text("Tell us about your current sleeping habits")){
+                    VStack(spacing: 20) {
+                        Text("What is your average wake up time?")
+                            .font(.body)
+                            .foregroundColor(.blue)
+                        DatePicker("", selection: $wakeUpDate, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                            .datePickerStyle(WheelDatePickerStyle())
+                            .foregroundColor(.blue)
+                    }
+                    VStack(spacing: 40)  {
+                        Text("What is your average bed time?")
+                            .font(.body)
+                            .foregroundColor(.blue)
+                        DatePicker("", selection: $bedTimeDate, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                            .datePickerStyle(WheelDatePickerStyle())
+                            .foregroundColor(.blue)
+                    }
+                }
             }
-        }
-        VStack{
-            NavigationLink(destination: userdatacollection()){ // change this to next window
-                Text("Next").frame(alignment: .bottom)
+            VStack{
+                NavigationLink(destination: userdatacollection()){ // change this to next window
+                    Text("Next").frame(alignment: .bottom)
+                }
             }
-            
-            
+
         }
+
     }
 }
+
