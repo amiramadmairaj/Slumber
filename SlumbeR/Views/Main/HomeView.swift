@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
     var body: some View {
         NavigationView {
-            Text("Hello, Home!")
-                .navigationTitle("Hello, Home!")
+            VStack{
+                NavigationLink(destination: userdatacollection()){
+                    Text("Click Start Here to Begin Your \n Slumber Journey").frame(width: 300, height: 300,alignment: .center)
+                        .cornerRadius(50)
+                }
+            }.navigationTitle("Welcome to Slumber")
         }
     }
 }

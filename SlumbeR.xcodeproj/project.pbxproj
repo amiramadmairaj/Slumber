@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42EABD77299583EC00494F25 /* firsttimesetup2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EABD76299583EC00494F25 /* firsttimesetup2.swift */; };
+		42EABD7C2995BB7B00494F25 /* firsttimesetup3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EABD7B2995BB7B00494F25 /* firsttimesetup3.swift */; };
 		CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841232992A499003B93BB /* SlumbeRApp.swift */; };
 		CB2841262992A499003B93BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841252992A499003B93BB /* ContentView.swift */; };
 		CB2841282992A49A003B93BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2841272992A49A003B93BB /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42EABD76299583EC00494F25 /* firsttimesetup2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firsttimesetup2.swift; sourceTree = "<group>"; };
+		42EABD7B2995BB7B00494F25 /* firsttimesetup3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firsttimesetup3.swift; sourceTree = "<group>"; };
 		CB2841202992A499003B93BB /* SlumbeR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlumbeR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2841232992A499003B93BB /* SlumbeRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlumbeRApp.swift; sourceTree = "<group>"; };
 		CB2841252992A499003B93BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,9 +86,11 @@
 		CB2841322992A971003B93BB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CB2841252992A499003B93BB /* ContentView.swift */,
-				CB2841352992ACC0003B93BB /* TabBar.swift */,
 				CB2841332992A9C4003B93BB /* HomeView.swift */,
+				42EABD76299583EC00494F25 /* firsttimesetup2.swift */,
+				42EABD7B2995BB7B00494F25 /* firsttimesetup3.swift */,
+				CB2841352992ACC0003B93BB /* TabBar.swift */,
+				CB2841252992A499003B93BB /* ContentView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -161,8 +167,10 @@
 			files = (
 				CB2841342992A9C4003B93BB /* HomeView.swift in Sources */,
 				CB2841262992A499003B93BB /* ContentView.swift in Sources */,
+				42EABD77299583EC00494F25 /* firsttimesetup2.swift in Sources */,
 				CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */,
 				CB2841362992ACC0003B93BB /* TabBar.swift in Sources */,
+				42EABD7C2995BB7B00494F25 /* firsttimesetup3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,9 @@ import SwiftUI
 struct SlumbeRApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+            //if user has no information in db, display HomeView and first time setup (1-3)
+            //else display home, track, and tips pages
         }
     }
 }
