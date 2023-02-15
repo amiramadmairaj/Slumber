@@ -10,17 +10,18 @@ import SwiftUI
 struct TabBar: View {
     var body: some View {
         TabView {
-//            HomeView()
-//                .tabItem{
-//                    Label("Home", systemImage: "person")
-//                }
             ContentView()
                 .tabItem{
-                    Label("Track", systemImage: "square.fill.text.grid.1x2")
+                    Label("Home", systemImage: "powersleep")
+                }
+            TipsView()
+                .tabItem{
+                    Label("Tips", systemImage: "lightbulb")
                 }
         }
     }
 }
+
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {

@@ -17,6 +17,7 @@
 		CB28412B2992A49A003B93BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB28412A2992A49A003B93BB /* Preview Assets.xcassets */; };
 		CB2841342992A9C4003B93BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841332992A9C4003B93BB /* HomeView.swift */; };
 		CB2841362992ACC0003B93BB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841352992ACC0003B93BB /* TabBar.swift */; };
+		CBB9A056299C716D00E6F50A /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A055299C716D00E6F50A /* TipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CB28412A2992A49A003B93BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB2841332992A9C4003B93BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CB2841352992ACC0003B93BB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		CBB9A055299C716D00E6F50A /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				CB2841352992ACC0003B93BB /* TabBar.swift */,
 				CB2841252992A499003B93BB /* ContentView.swift */,
 				6732CC63299C27710035F1FC /* ViewController.swift */,
+				CBB9A055299C716D00E6F50A /* TipsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */,
 				CB2841362992ACC0003B93BB /* TabBar.swift in Sources */,
 				6732CC64299C27710035F1FC /* ViewController.swift in Sources */,
+				CBB9A056299C716D00E6F50A /* TipsView.swift in Sources */,
 				6732CC67299C5ADD0035F1FC /* AppDelegate.swift in Sources */,
 				42EABD7C2995BB7B00494F25 /* UserSleepInputView.swift in Sources */,
 			);
