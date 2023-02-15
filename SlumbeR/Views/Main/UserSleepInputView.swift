@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct userdatacollection2: View {
+struct FirstTimeSetupSleepView: View {
 
     @State private var wakeUpDate = Date()
     @State private var bedTimeDate = Date()
@@ -37,11 +37,11 @@ struct userdatacollection2: View {
                     }
                 }
             }
-            VStack{
+            /*VStack{
                 NavigationLink(destination: userdatacollection()){ // change this to next window
                     Text("Next").frame(alignment: .bottom)
                 }
-            }
+            }*/
 
         }
 

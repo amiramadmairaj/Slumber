@@ -14,7 +14,6 @@ let translucentBlack = Color(red: 0, green: 0, blue: 0, opacity: 0.9)
 struct FirstAccessView: View{
     // first time access user get to see this view.
     // should only be used once.
-    var dest: ResultView
     var body: some View{
         NavigationView(){
             VStack(spacing: 20) {
@@ -24,7 +23,7 @@ struct FirstAccessView: View{
                     .foregroundColor(themeColor)
                     .shadow(color: themeColor, radius: 16)
                     .shadow(color: themeColor, radius: 16)
-                NavigationLink(destination: ResultView()){
+                NavigationLink(destination: FirstTimeSetupView()){
                     Text("Let's get started!")
                 }
             }
@@ -37,21 +36,42 @@ struct FirstAccessView: View{
 struct HomeView: View{
     @State private var firstTimeUser: Bool = true
     var body: some View{
-        FirstAccessView(dest: ResultView())
+        FirstAccessView()
         }
         
 }
 
-struct ResultView: View{
+struct FirstTimeSetupView: View{
     // figure out how to change colors
     // add next button and proceed to ask permission for HealthKit
-    @State var name: String = ""
+    @State private var name = ""
+    @State private var age = ""
+    @State private var weight = ""
+    @State private var height = ""
     var body: some View{
         Text("Let's get to know you a little!")
             .padding()
         Form{
-            Section(header: Text("What's your name?")){
-                TextField("Username", text: $name)
+            Group{
+                Section(header: Text("What's your name?")){
+                    TextField("Username", text: $name)
+                        .keyboardType(.decimalPad)
+                }
+            }
+            Group{
+                Section(header: Text("Personal Information")) {
+                    TextField("Age", text: $age)
+                        .keyboardType(.numberPad)
+                    TextField("Weight (in lbs)", text: $weight)
+                        .keyboardType(.decimalPad)
+                    TextField("Height (in inches)", text: $height)
+                        .keyboardType(.decimalPad)
+                }
+            }
+        }
+        VStack{
+            NavigationLink(destination: FirstTimeSetupSleepView()){
+                Text("Next").frame(alignment: .bottom)
             }
         }
     }
