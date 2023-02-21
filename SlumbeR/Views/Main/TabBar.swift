@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBar: View {
     var body: some View {
         TabView {
-            ContentView()
+            SleepDataChart()
                 .tabItem{
                     Label("Home", systemImage: "powersleep")
                 }

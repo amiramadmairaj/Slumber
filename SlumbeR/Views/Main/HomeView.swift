@@ -44,7 +44,7 @@ struct HomeView: View{
 struct FirstTimeSetupView: View{
     // figure out how to change colors
     // add next button and proceed to ask permission for HealthKit
-    @State private var name = ""
+    @State public var name = ""
     @State private var age = ""
     @State private var weight = ""
     @State private var height = ""

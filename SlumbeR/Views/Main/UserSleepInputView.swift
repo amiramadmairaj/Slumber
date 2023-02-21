@@ -37,11 +37,11 @@ struct FirstTimeSetupSleepView: View {
                     }
                 }
             }
-            /*VStack{
-                NavigationLink(destination: userdatacollection()){ // change this to next window
+            VStack{
+                NavigationLink(destination: TabBar()){
                     Text("Next").frame(alignment: .bottom)
                 }
-            }*/
+            }
 
         }
 
