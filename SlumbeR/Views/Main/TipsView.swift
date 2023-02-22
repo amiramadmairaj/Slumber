@@ -8,12 +8,18 @@
 //
 import SwiftUI
 
-struct TipsView: View {
-    
-    
-    //add if statements here to change up the "cards" list for personalization
-    let cards = ["Drink water", "Sleep more", "Ur mom", "Hello", "Bye bye", "Queen RiRi", "Listen to this very important piece of advice for ur sleep basically you have to sleep more so that you get good rest okay"]
+let my_age = 18
 
+struct TipsView: View {
+
+    var cards: [String] = []
+    init() {
+        if my_age == 18{
+            cards.append("Uh oh, you got insufficient sleep last night (<= 6) Try and get 7-9 hours of sleep tonight!")
+            cards.append("sleep more")
+            cards.append("hello world")
+            }
+        }
 
     @State private var isShowing: [Bool] = Array(repeating: false, count: 7)
 
@@ -34,12 +40,13 @@ struct TipsView: View {
                             .fill(Color(red: 0.726, green: 0.671, blue: 1.000, opacity: 1.0))
                             .shadow(color: Color.cardShadow, radius: 10, x: 0, y: 8)
                             .padding(.vertical, 10) // add space between each card
-//                            .frame(height: 600)
                         Text(card)
                             .font(.system(size: 25, weight: .light, design: .rounded))
                             .foregroundColor(Color.cardText)
+                            .padding(20) // add padding to text
+                            .multilineTextAlignment(.center)
                     }
-                    .frame(height: 120)
+                    .frame(height: 220)
                     .padding(.horizontal)
                     .offset(x: self.isShowing[index] ? 0 : 500)
                     .onAppear {
