@@ -16,6 +16,7 @@
 		CB28412B2992A49A003B93BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB28412A2992A49A003B93BB /* Preview Assets.xcassets */; };
 		CB2841342992A9C4003B93BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841332992A9C4003B93BB /* HomeView.swift */; };
 		CB2841362992ACC0003B93BB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841352992ACC0003B93BB /* TabBar.swift */; };
+		CB4DEFC529A588A5009B96C0 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = CB4DEFC429A588A5009B96C0 /* SwiftUICharts */; };
 		CBB9A056299C716D00E6F50A /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A055299C716D00E6F50A /* TipsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4DEFC529A588A5009B96C0 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +131,9 @@
 			dependencies = (
 			);
 			name = SlumbeR;
+			packageProductDependencies = (
+				CB4DEFC429A588A5009B96C0 /* SwiftUICharts */,
+			);
 			productName = SlumbeR;
 			productReference = CB2841202992A499003B93BB /* SlumbeR.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +162,9 @@
 				Base,
 			);
 			mainGroup = CB2841172992A499003B93BB;
+			packageReferences = (
+				CB4DEFC329A588A5009B96C0 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = CB2841212992A499003B93BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB4DEFC329A588A5009B96C0 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB4DEFC429A588A5009B96C0 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB4DEFC329A588A5009B96C0 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */ = {

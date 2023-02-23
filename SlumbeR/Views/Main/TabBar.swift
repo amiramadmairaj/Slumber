@@ -10,6 +10,7 @@ import SwiftUI
 struct TabBar: View {
     var body: some View {
         TabView {
+//            commented out for now bc of that chart error
             SleepDataChart()
                 .tabItem{
                     Label("Home", systemImage: "powersleep")
