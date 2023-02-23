@@ -11,6 +11,7 @@ var name = "User"
 let themeColor = Color(red: 0.364, green: 0.247, blue: 0.827, opacity: 1.0)
 let translucentBlack = Color(red: 0, green: 0, blue: 0, opacity: 0.9)
 
+
 struct FirstAccessView: View{
     // first time access user get to see this view.
     // should only be used once.
@@ -27,24 +28,40 @@ struct FirstAccessView: View{
                     Text("Let's get started!")
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(translucentBlack)
+            .preferredColorScheme(.dark) //default to dark mode
         }
     }
 }
 
 struct HomeView: View{
+    @Environment(\.managedObjectContext) var managedContext
+    @FetchRequest(sortDescriptors: []) var userProfiles: FetchedResults<UserProfile>
     @State private var firstTimeUser: Bool = true
-    var body: some View{
-        FirstAccessView()
+    //fetching user profile if user has one. Default is [0] since only one user profile saved
+    var body: some View {
+        let _ = {
+            print("\(userProfiles.count)")
+            if (userProfiles.count == 0) {
+                firstTimeUser = false
+            }
+            else
+            {
+                firstTimeUser = userProfiles[0].firstAccess
+            }
         }
-        
+        if (firstTimeUser) {
+            FirstAccessView()
+        }
+        else {
+            TabBar()
+        }
+    }
 }
 
 struct FirstTimeSetupView: View{
     // figure out how to change colors
     // add next button and proceed to ask permission for HealthKit
-    @State public var name = ""
+    @State private var name = ""
     @State private var age = ""
     @State private var weight = ""
     @State private var height = ""
@@ -74,6 +91,21 @@ struct FirstTimeSetupView: View{
                 Text("Next").frame(alignment: .bottom)
             }
         }
+    }
+        //.onDisappear(perform: something)
+    
+}
+
+//need to add in context
+func createNewProfile(profiles: FetchedResults<UserProfile>, age: Int16, height: Int16, weight: Int16, name: String) {
+    if (profiles.count == 0) {
+        let newProf = UserProfile()
+        newProf.age = age
+        newProf.height = height
+        newProf.weight = weight
+        newProf.name = name
+        newProf.firstAccess = false
+        
     }
 }
 

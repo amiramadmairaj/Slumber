@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct SlumbeRApp: App {
+    @StateObject private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
-            //if user has no information in db, display HomeView and first time setup (1-3)
-            //else display tab bar        }
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
