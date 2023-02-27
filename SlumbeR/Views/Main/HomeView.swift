@@ -59,12 +59,34 @@ struct HomeView: View{
 }
 
 struct FirstTimeSetupView: View{
-    // figure out how to change colors
-    // add next button and proceed to ask permission for HealthKit
+    // below environment injects core data context into this scope
+    @Environment(\.managedObjectContext) var managedContext
+    // this should fetch an empty list of profiles.
+    // maybe look into a way to manage 1 single profile in the future
+    // but now default index 0 as current user profile
+    @FetchRequest(sortDescriptors: []) var userProfiles: FetchedResults<UserProfile>
+    
     @State private var name = ""
-    @State private var age = ""
-    @State private var weight = ""
-    @State private var height = ""
+    @State private var age: Int16 = 0
+    @State private var weight: Int16 = 0
+    @State private var height: Int16 = 0
+    
+    func createNewProfile(age: Int16, height: Int16, weight: Int16, name: String) {
+        // this function attempts to create a new UserProfile object and store it in the
+        // NSManagedObjectContext manageContext.
+        // not all attributes are stored at this moment.
+        if (userProfiles.count == 0) {
+            let newProf = UserProfile(context: managedContext)
+            newProf.age = age
+            newProf.height = height
+            newProf.weight = weight
+            newProf.name = name
+            newProf.firstAccess = false
+            // no error handling as of now
+            try? managedContext.save()
+        }
+    }
+    
     var body: some View{
         Text("Let's get to know you a little!")
             .padding()
@@ -72,41 +94,31 @@ struct FirstTimeSetupView: View{
             Group{
                 Section(header: Text("What's your name?")){
                     TextField("Username", text: $name)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.default)
                 }
             }
             Group{
+                // need fixing the UI it looks weird right now.
                 Section(header: Text("Personal Information")) {
-                    TextField("Age", text: $age)
-                        .keyboardType(.numberPad)
-                    TextField("Weight (in lbs)", text: $weight)
-                        .keyboardType(.decimalPad)
-                    TextField("Height (in inches)", text: $height)
-                        .keyboardType(.decimalPad)
+                    Text("What is your age?")
+                    TextField("Age", value: $age, format:.number)
+                    Text("What is your weight?")
+                    TextField("Weight (in lbs)", value: $weight, format: .number)
+                    Text("How tall are you?")
+                    TextField("Height (in inches)", value: $height, format:.number)
                 }
             }
         }
         VStack{
-            NavigationLink(destination: FirstTimeSetupSleepView()){
+            // the "combined" Done button and navigation button.
+            // the createProfile function is used when the next view in the navigation
+            // appears.
+            NavigationLink(destination: FirstTimeSetupSleepView().onAppear(perform: { createNewProfile(age: self.age, height: self.height, weight: self.weight, name: self.name)})){
                 Text("Next").frame(alignment: .bottom)
             }
         }
     }
-        //.onDisappear(perform: something)
     
-}
-
-//need to add in context
-func createNewProfile(profiles: FetchedResults<UserProfile>, age: Int16, height: Int16, weight: Int16, name: String) {
-    if (profiles.count == 0) {
-        let newProf = UserProfile()
-        newProf.age = age
-        newProf.height = height
-        newProf.weight = weight
-        newProf.name = name
-        newProf.firstAccess = false
-        
-    }
 }
 
 struct HomeView_Previews: PreviewProvider {

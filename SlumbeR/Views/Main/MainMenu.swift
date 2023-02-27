@@ -10,7 +10,6 @@ import Charts
 
 struct SleepDataChart:
     View {
-
     // Initialize HealthKit store
     let healthStore = HKHealthStore()
     let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
@@ -25,6 +24,7 @@ struct SleepDataChart:
     
 
     func greetingLogic() -> String {
+        
       let hour = Calendar.current.component(.hour, from: Date())
       
       let NEW_DAY = 0
