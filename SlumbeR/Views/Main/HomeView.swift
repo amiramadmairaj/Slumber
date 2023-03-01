@@ -70,8 +70,12 @@ struct FirstTimeSetupView: View{
     @State private var age: Int16 = 0
     @State private var weight: Int16 = 0
     @State private var height: Int16 = 0
+    @State private var smokes = false
+    @State private var gender = false
+    @State private var avgExercise: Int16 = 0
     
-    func createNewProfile(age: Int16, height: Int16, weight: Int16, name: String) {
+    
+    func createNewProfile(age: Int16, height: Int16, weight: Int16, name: String, gender: Bool, smokes: Bool, avgExercise: Int16) {
         // this function attempts to create a new UserProfile object and store it in the
         // NSManagedObjectContext manageContext.
         // not all attributes are stored at this moment.
@@ -81,6 +85,9 @@ struct FirstTimeSetupView: View{
             newProf.height = height
             newProf.weight = weight
             newProf.name = name
+            newProf.gender = gender
+            newProf.smokes = smokes
+            newProf.avgExercise = avgExercise
             newProf.firstAccess = false
             // no error handling as of now
             try? managedContext.save()
@@ -92,7 +99,7 @@ struct FirstTimeSetupView: View{
             .padding()
         Form{
             Group{
-                Section(header: Text("What's your name?")){
+                Section(header: Text("What Should We Call You?")){
                     TextField("Username", text: $name)
                         .keyboardType(.default)
                 }
@@ -102,10 +109,25 @@ struct FirstTimeSetupView: View{
                 Section(header: Text("Personal Information")) {
                     Text("What is your age?")
                     TextField("Age", value: $age, format:.number)
+                    Text("What is your gender?")
+                    Picker(selection: $smokes, label: Text("")) {
+                        Text("Male").tag(true)
+                        Text("Female").tag(false)
+                    }
                     Text("What is your weight?")
                     TextField("Weight (in lbs)", value: $weight, format: .number)
                     Text("How tall are you?")
                     TextField("Height (in inches)", value: $height, format:.number)
+                    
+                }
+                Section(header: Text("Health Questionnaire")) {
+                    Text("How many times (on average) do you exercise?")
+                    TextField("Weekly Exercise", value: $avgExercise, format:.number)
+                    Text("Do you smoke?")
+                    Picker(selection: $smokes, label: Text("")) {
+                        Text("Yes").tag(true)
+                        Text("No").tag(false)
+                    }
                 }
             }
         }
@@ -113,7 +135,7 @@ struct FirstTimeSetupView: View{
             // the "combined" Done button and navigation button.
             // the createProfile function is used when the next view in the navigation
             // appears.
-            NavigationLink(destination: FirstTimeSetupSleepView().onAppear(perform: { createNewProfile(age: self.age, height: self.height, weight: self.weight, name: self.name)})){
+            NavigationLink(destination: FirstTimeSetupSleepView().onAppear(perform: { createNewProfile(age: self.age, height: self.height, weight: self.weight, name: self.name, gender: self.gender, smokes: self.smokes, avgExercise: self.avgExercise)})){
                 Text("Next").frame(alignment: .bottom)
             }
         }

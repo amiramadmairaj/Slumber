@@ -52,6 +52,7 @@ struct SleepDataChart: View {
         }
     }
     
+    @available(iOS 16.0, *)
     func fetchSleepData() {
         let calendar = Calendar.current
         let now = Date()
@@ -61,7 +62,7 @@ struct SleepDataChart: View {
         let query = HKSampleQuery(sampleType: self.sleepType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, samples, error) in
             if let samples = samples as? [HKCategorySample] {
                 let data = samples.map { sample -> (Date, Double) in
-                    let value = sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue ? 1.0 : 0.0
+                    let value = sample.value == HKCategoryValueSleepAnalysis.asleepREM.rawValue ? 1.0 : 0.0
                     return (sample.startDate, value)
                 }
                 self.sleepData = data

@@ -3,10 +3,11 @@
     <entity name="UserProfile" representedClassName="UserProfile" syncable="YES" codeGenerationType="class">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="avgBedtime" optional="YES" attributeType="String"/>
+        <attribute name="avgExercise" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="avgWakeUp" optional="YES" attributeType="String"/>
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="firstAccess" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="smokes" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
