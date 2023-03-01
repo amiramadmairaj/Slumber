@@ -121,7 +121,7 @@ struct FirstTimeSetupView: View{
                     
                 }
                 Section(header: Text("Health Questionnaire")) {
-                    Text("How many times (on average) do you exercise?")
+                    Text("How many times (on average) do you exercise a week?")
                     TextField("Weekly Exercise", value: $avgExercise, format:.number)
                     Text("Do you smoke?")
                     Picker(selection: $smokes, label: Text("")) {
