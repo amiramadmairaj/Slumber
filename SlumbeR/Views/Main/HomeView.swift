@@ -33,23 +33,40 @@ struct FirstAccessView: View{
     }
 }
 
+struct DebugView: View{
+    @Environment(\.managedObjectContext) var managedContext
+    @FetchRequest(sortDescriptors: []) var userProfiles: FetchedResults<UserProfile>
+    var body: some View{
+        NavigationView {
+            VStack{
+                List(userProfiles) { user in
+                    Text(user.name ?? "No name")
+                    Text("\(user.height)")
+                }
+                
+                Button("Delete") {
+                    for user in userProfiles {
+                        managedContext.delete(user)
+                    }
+                    try? managedContext.save()
+                }
+                NavigationLink("First Access", destination: FirstAccessView())
+                NavigationLink("TabBar", destination: TabBar())
+            }
+        }
+    }
+}
+
 struct HomeView: View{
     @Environment(\.managedObjectContext) var managedContext
     @FetchRequest(sortDescriptors: []) var userProfiles: FetchedResults<UserProfile>
-    @State private var firstTimeUser: Bool = true
+    @State var debug = true
     //fetching user profile if user has one. Default is [0] since only one user profile saved
     var body: some View {
-        let _ = {
-            print("\(userProfiles.count)")
-            if (userProfiles.count == 0) {
-                firstTimeUser = false
-            }
-            else
-            {
-                firstTimeUser = userProfiles[0].firstAccess
-            }
+        if (debug == true) {
+            DebugView()
         }
-        if (firstTimeUser) {
+        else if (userProfiles.count == 0) {
             FirstAccessView()
         }
         else {
@@ -110,7 +127,7 @@ struct FirstTimeSetupView: View{
                     Text("What is your age?")
                     TextField("Age", value: $age, format:.number)
                     Text("What is your gender?")
-                    Picker(selection: $smokes, label: Text("")) {
+                    Picker(selection: $gender, label: Text("")) {
                         Text("Male").tag(true)
                         Text("Female").tag(false)
                     }
