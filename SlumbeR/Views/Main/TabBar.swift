@@ -19,6 +19,10 @@ struct TabBar: View {
                 .tabItem{
                     Label("Tips", systemImage: "lightbulb")
                 }
+            DebugMLView()
+                .tabItem{
+                    Label("ML", systemImage: "lightbulb")
+                }
         }
     }
 }

@@ -52,7 +52,28 @@ struct DebugView: View{
                 }
                 NavigationLink("First Access", destination: FirstAccessView())
                 NavigationLink("TabBar", destination: TabBar())
+                NavigationLink("ML Debug",destination: DebugMLView())
+                    .navigationBarHidden(true)
             }
+            .preferredColorScheme(.dark)
+        }
+    }
+}
+
+struct DebugMLView: View {
+    @Environment(\.managedObjectContext) var managedContext
+    @FetchRequest(sortDescriptors: []) var userProfiles: FetchedResults<UserProfile>
+    var body: some View {
+        VStack {
+            let curUser = userProfiles[0]
+            // coping mechanism for current database mismatches
+            // scuffed type casting into string
+            let theySmoke = (curUser.smokes ? "Yes" : "No")
+            let theirGender = (curUser.gender ? "Male" : "Female")
+            var sleepEff = get_efficiency(age: Int(curUser.age), gender: theirGender, sleepduration: Double(6.0), remsleeppercentage: Double(17.0), deepsleeppercentage: Double(70.0), smokingstatus: theySmoke, exercisefrequency: Double(curUser.avgExercise))
+            Text("Current sleep efficiency is: ")
+            Spacer()
+            Text("\(sleepEff)")
         }
     }
 }

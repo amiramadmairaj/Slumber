@@ -11,6 +11,8 @@
 		42EABD7C2995BB7B00494F25 /* UserSleepInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EABD7B2995BB7B00494F25 /* UserSleepInputView.swift */; };
 		6732CC62299C153E0035F1FC /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */; };
 		6732CC67299C5ADD0035F1FC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6732CC66299C5ADD0035F1FC /* DataController.swift */; };
+		67E5703929BFEAD10079D2D1 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703829BFEAD10079D2D1 /* utils.swift */; };
+		67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */; };
 		CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841232992A499003B93BB /* SlumbeRApp.swift */; };
 		CB2841282992A49A003B93BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2841272992A49A003B93BB /* Assets.xcassets */; };
 		CB28412B2992A49A003B93BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB28412A2992A49A003B93BB /* Preview Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		42EABD7B2995BB7B00494F25 /* UserSleepInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSleepInputView.swift; sourceTree = "<group>"; };
 		6732CC61299C153E0035F1FC /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6732CC66299C5ADD0035F1FC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		67E5703829BFEAD10079D2D1 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepE.mlmodel; sourceTree = "<group>"; };
 		CB2841202992A499003B93BB /* SlumbeR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlumbeR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2841232992A499003B93BB /* SlumbeRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlumbeRApp.swift; sourceTree = "<group>"; };
 		CB2841272992A49A003B93BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 			children = (
 				421371BB29A38B75008FAB04 /* SlumbeR.entitlements */,
 				4294803B29A3873700436DBC /* Info.plist */,
+				67E5703829BFEAD10079D2D1 /* utils.swift */,
+				67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */,
 				6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */,
 				6732CC66299C5ADD0035F1FC /* DataController.swift */,
 				6732CC65299C5ACD0035F1FC /* Model */,
@@ -191,9 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E5703929BFEAD10079D2D1 /* utils.swift in Sources */,
 				CB2841342992A9C4003B93BB /* HomeView.swift in Sources */,
 				6732CC62299C153E0035F1FC /* DataModel.xcdatamodeld in Sources */,
 				CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */,
+				67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */,
 				CB2841362992ACC0003B93BB /* TabBar.swift in Sources */,
 				429E40C929A339FC0056A9C0 /* MainMenu.swift in Sources */,
 				CBB9A056299C716D00E6F50A /* TipsView.swift in Sources */,
