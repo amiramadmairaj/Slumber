@@ -15,9 +15,9 @@ struct TipsView: View {
     var cards: [String] = []
     init() {
         if my_age == 18{
-            cards.append("Uh oh, you got insufficient sleep last night (<= 6) Try and get 7-9 hours of sleep tonight!")
-            cards.append("sleep more")
-            cards.append("hello world")
+            cards.append("Uh Oh! You're not getting enough sleep. Ideally, you should aim for 7-9 hours of sleep per night. Avoid using electronic devices before bed, as the blue light can interfere with sleep.")
+            cards.append("You're not getting enough REM sleep. It is recommended that 20-25% of your total sleep time should be spent in REM sleep.Try creating an ideal environment for sleep. That means no bright lights, not too hot and not too cold, and don’t watch television or work on the computer in the bedroom.")
+            cards.append("You're not getting enough deep sleep. It is recommended that 20-25% of your total sleep time should be spent in REM sleep.Try adding more fiber to your diet. Research suggests that a higher intake of fiber can increase the amount of time spent in the deep sleep stage.")
             }
         }
 
@@ -46,7 +46,7 @@ struct TipsView: View {
                             .padding(20) // add padding to text
                             .multilineTextAlignment(.center)
                     }
-                    .frame(height: 220)
+                    .frame(height: 400)
                     .padding(.horizontal)
                     .offset(x: self.isShowing[index] ? 0 : 500)
                     .onAppear {

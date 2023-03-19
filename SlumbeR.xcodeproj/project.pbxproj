@@ -27,8 +27,24 @@
 		CB2841342992A9C4003B93BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841332992A9C4003B93BB /* HomeView.swift */; };
 		CB2841362992ACC0003B93BB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841352992ACC0003B93BB /* TabBar.swift */; };
 		CB4DEFC529A588A5009B96C0 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = CB4DEFC429A588A5009B96C0 /* SwiftUICharts */; };
+		CB7C7F1729C2E20600D9B715 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB7C7F1629C2E20600D9B715 /* Entitlements.plist */; };
+		CB7C7F1929C2E40500D9B715 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7C7F1829C2E40500D9B715 /* HealthKit.framework */; };
+		CB7C7F1B29C2E40C00D9B715 /* HealthKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7C7F1A29C2E40B00D9B715 /* HealthKitUI.framework */; };
 		CBB9A056299C716D00E6F50A /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A055299C716D00E6F50A /* TipsView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB3AFBEA29C24B83005D08EF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		421371BB29A38B75008FAB04 /* SlumbeR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlumbeR.entitlements; sourceTree = "<group>"; };
@@ -53,6 +69,13 @@
 		CB28412A2992A49A003B93BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB2841332992A9C4003B93BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CB2841352992ACC0003B93BB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		CB3AFBDE29C24B83005D08EF /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		CB3AFBE129C24B83005D08EF /* AccountAuthenticationModificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthenticationModificationViewController.swift; sourceTree = "<group>"; };
+		CB3AFBE429C24B83005D08EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		CB3AFBE629C24B83005D08EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB7C7F1629C2E20600D9B715 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		CB7C7F1829C2E40500D9B715 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		CB7C7F1A29C2E40B00D9B715 /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
 		CBB9A055299C716D00E6F50A /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +85,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4DEFC529A588A5009B96C0 /* SwiftUICharts in Frameworks */,
+				CB7C7F1929C2E40500D9B715 /* HealthKit.framework in Frameworks */,
+				CB7C7F1B29C2E40C00D9B715 /* HealthKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +103,10 @@
 		CB2841172992A499003B93BB = {
 			isa = PBXGroup;
 			children = (
+				CB7C7F1629C2E20600D9B715 /* Entitlements.plist */,
 				CB2841222992A499003B93BB /* SlumbeR */,
+				CB3AFBE029C24B83005D08EF /* ReishaIphone */,
+				CB3AFBDD29C24B83005D08EF /* Frameworks */,
 				CB2841212992A499003B93BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,6 +173,26 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		CB3AFBDD29C24B83005D08EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB7C7F1A29C2E40B00D9B715 /* HealthKitUI.framework */,
+				CB7C7F1829C2E40500D9B715 /* HealthKit.framework */,
+				CB3AFBDE29C24B83005D08EF /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB3AFBE029C24B83005D08EF /* ReishaIphone */ = {
+			isa = PBXGroup;
+			children = (
+				CB3AFBE129C24B83005D08EF /* AccountAuthenticationModificationViewController.swift */,
+				CB3AFBE329C24B83005D08EF /* MainInterface.storyboard */,
+				CB3AFBE629C24B83005D08EF /* Info.plist */,
+			);
+			path = ReishaIphone;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +203,7 @@
 				CB28411C2992A499003B93BB /* Sources */,
 				CB28411D2992A499003B93BB /* Frameworks */,
 				CB28411E2992A499003B93BB /* Resources */,
+				CB3AFBEA29C24B83005D08EF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -175,7 +224,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					CB28411F2992A499003B93BB = {
@@ -209,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7C7F1729C2E20600D9B715 /* Entitlements.plist in Resources */,
 				CB28412B2992A49A003B93BB /* Preview Assets.xcassets in Resources */,
 				CB2841282992A49A003B93BB /* Assets.xcassets in Resources */,
 			);
@@ -243,6 +293,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CB3AFBE329C24B83005D08EF /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB3AFBE429C24B83005D08EF /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CB28412C2992A49A003B93BB /* Debug */ = {
@@ -364,12 +425,14 @@
 		CB28412F2992A49A003B93BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SlumbeR/SlumbeR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SlumbeR/Preview Content\"";
+				DEVELOPMENT_TEAM = M5T36885A4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -396,12 +459,15 @@
 		CB2841302992A49A003B93BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SlumbeR/SlumbeR.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = SlumbeR/SlumbeR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SlumbeR/Preview Content\"";
+				DEVELOPMENT_TEAM = M5T36885A4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
