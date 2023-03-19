@@ -11,6 +11,14 @@
 		42EABD7C2995BB7B00494F25 /* UserSleepInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EABD7B2995BB7B00494F25 /* UserSleepInputView.swift */; };
 		6732CC62299C153E0035F1FC /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */; };
 		6732CC67299C5ADD0035F1FC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6732CC66299C5ADD0035F1FC /* DataController.swift */; };
+		67B22D1929C6C96C00EECEA3 /* cgender.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1529C6C96C00EECEA3 /* cgender.mlmodel */; };
+		67B22D1A29C6C96C00EECEA3 /* cexerfreq.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1629C6C96C00EECEA3 /* cexerfreq.mlmodel */; };
+		67B22D1B29C6C96C00EECEA3 /* cSleepE5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1729C6C96C00EECEA3 /* cSleepE5.mlmodel */; };
+		67B22D1C29C6C96C00EECEA3 /* csmoke.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1829C6C96C00EECEA3 /* csmoke.mlmodel */; };
+		67B22D1E29C6C98700EECEA3 /* deep.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1D29C6C98700EECEA3 /* deep.mlmodel */; };
+		67B22D2029C6C9B000EECEA3 /* duration.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1F29C6C9B000EECEA3 /* duration.mlmodel */; };
+		67B22D2229C6C9B800EECEA3 /* rem.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D2129C6C9B800EECEA3 /* rem.mlmodel */; };
+		67B22D2429C6D44F00EECEA3 /* age.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D2329C6D44F00EECEA3 /* age.mlmodel */; };
 		67E5703929BFEAD10079D2D1 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703829BFEAD10079D2D1 /* utils.swift */; };
 		67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */; };
 		CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841232992A499003B93BB /* SlumbeRApp.swift */; };
@@ -29,6 +37,14 @@
 		42EABD7B2995BB7B00494F25 /* UserSleepInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSleepInputView.swift; sourceTree = "<group>"; };
 		6732CC61299C153E0035F1FC /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6732CC66299C5ADD0035F1FC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		67B22D1529C6C96C00EECEA3 /* cgender.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cgender.mlmodel; sourceTree = "<group>"; };
+		67B22D1629C6C96C00EECEA3 /* cexerfreq.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cexerfreq.mlmodel; sourceTree = "<group>"; };
+		67B22D1729C6C96C00EECEA3 /* cSleepE5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cSleepE5.mlmodel; sourceTree = "<group>"; };
+		67B22D1829C6C96C00EECEA3 /* csmoke.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = csmoke.mlmodel; sourceTree = "<group>"; };
+		67B22D1D29C6C98700EECEA3 /* deep.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = deep.mlmodel; sourceTree = "<group>"; };
+		67B22D1F29C6C9B000EECEA3 /* duration.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = duration.mlmodel; sourceTree = "<group>"; };
+		67B22D2129C6C9B800EECEA3 /* rem.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = rem.mlmodel; sourceTree = "<group>"; };
+		67B22D2329C6D44F00EECEA3 /* age.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = age.mlmodel; sourceTree = "<group>"; };
 		67E5703829BFEAD10079D2D1 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepE.mlmodel; sourceTree = "<group>"; };
 		CB2841202992A499003B93BB /* SlumbeR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlumbeR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +97,14 @@
 				421371BB29A38B75008FAB04 /* SlumbeR.entitlements */,
 				4294803B29A3873700436DBC /* Info.plist */,
 				67E5703829BFEAD10079D2D1 /* utils.swift */,
+				67B22D2329C6D44F00EECEA3 /* age.mlmodel */,
+				67B22D1629C6C96C00EECEA3 /* cexerfreq.mlmodel */,
+				67B22D1529C6C96C00EECEA3 /* cgender.mlmodel */,
+				67B22D1729C6C96C00EECEA3 /* cSleepE5.mlmodel */,
+				67B22D1829C6C96C00EECEA3 /* csmoke.mlmodel */,
+				67B22D1F29C6C9B000EECEA3 /* duration.mlmodel */,
+				67B22D2129C6C9B800EECEA3 /* rem.mlmodel */,
+				67B22D1D29C6C98700EECEA3 /* deep.mlmodel */,
 				67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */,
 				6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */,
 				6732CC66299C5ADD0035F1FC /* DataController.swift */,
@@ -199,13 +223,21 @@
 			files = (
 				67E5703929BFEAD10079D2D1 /* utils.swift in Sources */,
 				CB2841342992A9C4003B93BB /* HomeView.swift in Sources */,
+				67B22D1C29C6C96C00EECEA3 /* csmoke.mlmodel in Sources */,
+				67B22D1A29C6C96C00EECEA3 /* cexerfreq.mlmodel in Sources */,
 				6732CC62299C153E0035F1FC /* DataModel.xcdatamodeld in Sources */,
+				67B22D1E29C6C98700EECEA3 /* deep.mlmodel in Sources */,
+				67B22D2429C6D44F00EECEA3 /* age.mlmodel in Sources */,
+				67B22D1B29C6C96C00EECEA3 /* cSleepE5.mlmodel in Sources */,
 				CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */,
+				67B22D1929C6C96C00EECEA3 /* cgender.mlmodel in Sources */,
 				67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */,
 				CB2841362992ACC0003B93BB /* TabBar.swift in Sources */,
 				429E40C929A339FC0056A9C0 /* MainMenu.swift in Sources */,
 				CBB9A056299C716D00E6F50A /* TipsView.swift in Sources */,
 				6732CC67299C5ADD0035F1FC /* DataController.swift in Sources */,
+				67B22D2029C6C9B000EECEA3 /* duration.mlmodel in Sources */,
+				67B22D2229C6C9B800EECEA3 /* rem.mlmodel in Sources */,
 				42EABD7C2995BB7B00494F25 /* UserSleepInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
