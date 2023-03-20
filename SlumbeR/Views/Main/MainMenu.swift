@@ -25,7 +25,7 @@ struct SleepDataChart:
     
     @State var sleepSamples: [HKCategorySample] = []
     @State var sleepHours: [Double] = []
-    @State var sleepData: [Double] = [0.0, 0.0, 0.0, 0.0]
+    @State var sleepData: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
 
     //added
     @State var remSleepSamples: [HKCategorySample] = []
@@ -65,22 +65,44 @@ struct SleepDataChart:
             let curUser = userProfiles[0]
             if !sleepHours.isEmpty == false {
                 Text("\(greetingLogic()), \(curUser.name ?? "No Name")")
-
                 Chart{
                     BarMark(x: .value("Name", "Awake"),
                             y: .value("Sales", sleepData[0])
                     )
+                    .annotation(position: .overlay, alignment: .center) {
+                        Text("\(sleepData[0], format: .number.precision(.fractionLength(2)))")
+                            .foregroundColor(.white)
+                    }
                     BarMark(x: .value("Name", "REM"),
                             y: .value("Sales", sleepData[1])
                     )
+                    .annotation(position: .overlay, alignment: .center) {
+                        Text("\(sleepData[1], format: .number.precision(.fractionLength(2)))")
+                            .foregroundColor(.white)
+                    }
                     BarMark(x: .value("Name", "Core"),
                             y: .value("Sales", sleepData[2])
                     )
+                    .annotation(position: .overlay, alignment: .center) {
+                        Text("\(sleepData[2], format: .number.precision(.fractionLength(2)))")
+                            .foregroundColor(.white)
+                    }
                     BarMark(x: .value("Name", "Deep"),
                             y: .value("Sales", sleepData[3])
                     )
-
+                    .annotation(position: .overlay, alignment: .center) {
+                        Text("\(sleepData[3], format: .number.precision(.fractionLength(2)))")
+                            .foregroundColor(.white)
+                    }
+                    BarMark(x: .value("Name", "Total"),
+                            y: .value("Sales", sleepData[4])
+                    )
+                    .annotation(position: .overlay, alignment: .center) {
+                        Text("\(sleepData[4], format: .number.precision(.fractionLength(2)))")
+                            .foregroundColor(.white)
+                    }
                 }
+                .chartYScale(domain: 0...sleepData[4])
 
             } else {
                 Text("No sleep data found\n Please check your settings to ensure SlumbeR has access to HealthKit sleep data")
@@ -130,6 +152,7 @@ struct SleepDataChart:
             myGlobalList[1] = 0.0
             myGlobalList[2] = 0.0
             myGlobalList[3] = 0.0
+            myGlobalList[4] = 0.0
             if let samples = samples as? [HKCategorySample] {
                 // Loop through the samples and calculate the duration of each sleep stage
                 for sample in samples {
@@ -147,6 +170,8 @@ struct SleepDataChart:
                         myGlobalList[2] += duration
                     case HKCategoryValueSleepAnalysis.asleepDeep.rawValue:
                         myGlobalList[3] += duration
+                    case HKCategoryValueSleepAnalysis.asleepUnspecified.rawValue:
+                        myGlobalList[4] += duration
                     default:
                         continue
                     }

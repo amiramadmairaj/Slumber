@@ -277,20 +277,19 @@ struct FirstTimeSetupView: View{
                 }
             }
         }
+        .onDisappear{ createNewProfile(age: self.age,
+                                       height: self.height,
+                                       weight: self.weight,
+                                       name: self.name,
+                                       gender: self.gender,
+                                       smokes: self.smokes,
+                                       avgExercise: self.avgExercise)
+            }
         VStack{
             // the "combined" Done button and navigation button.
             // the createProfile function is used when the next view in the navigation
             // appears.
-            NavigationLink(destination: FirstTimeSetupSleepView().onAppear(perform: {
-                createNewProfile(age: self.age,
-                                 height: self.height,
-                                 weight: self.weight,
-                                 name: self.name,
-                                 gender: self.gender,
-                                 smokes: self.smokes,
-                                 avgExercise: self.avgExercise)
-                
-            })) {
+            NavigationLink(destination: FirstTimeSetupSleepView()) {
                 Text("Next").frame(alignment: .bottom)
             }
         }
