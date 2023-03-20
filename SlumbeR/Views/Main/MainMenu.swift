@@ -124,7 +124,11 @@ struct SleepDataChart:
                 print("Error fetching sleep data: \(error.localizedDescription)")
                 return
             }
-
+            
+            myGlobalList[0] = 0.0
+            myGlobalList[1] = 0.0
+            myGlobalList[2] = 0.0
+            myGlobalList[3] = 0.0
             if let samples = samples as? [HKCategorySample] {
                 // Loop through the samples and calculate the duration of each sleep stage
                 for sample in samples {
