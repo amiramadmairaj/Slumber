@@ -21,15 +21,15 @@
 		67B22D2429C6D44F00EECEA3 /* age.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D2329C6D44F00EECEA3 /* age.mlmodel */; };
 		67E5703929BFEAD10079D2D1 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703829BFEAD10079D2D1 /* utils.swift */; };
 		67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */; };
-		CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841232992A499003B93BB /* SlumbeRApp.swift */; };
 		CB2841282992A49A003B93BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2841272992A49A003B93BB /* Assets.xcassets */; };
 		CB28412B2992A49A003B93BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB28412A2992A49A003B93BB /* Preview Assets.xcassets */; };
-		CB2841342992A9C4003B93BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841332992A9C4003B93BB /* HomeView.swift */; };
 		CB2841362992ACC0003B93BB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841352992ACC0003B93BB /* TabBar.swift */; };
 		CB4DEFC529A588A5009B96C0 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = CB4DEFC429A588A5009B96C0 /* SwiftUICharts */; };
 		CB7C7F1729C2E20600D9B715 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB7C7F1629C2E20600D9B715 /* Entitlements.plist */; };
 		CB7C7F1929C2E40500D9B715 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7C7F1829C2E40500D9B715 /* HealthKit.framework */; };
 		CB7C7F1B29C2E40C00D9B715 /* HealthKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7C7F1A29C2E40B00D9B715 /* HealthKitUI.framework */; };
+		CBB3CC0429C803A800C0030B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841332992A9C4003B93BB /* HomeView.swift */; };
+		CBB589AE29C807D1005483D3 /* SlumbeRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2841232992A499003B93BB /* SlumbeRApp.swift */; };
 		CBB9A056299C716D00E6F50A /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A055299C716D00E6F50A /* TipsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +96,7 @@
 		6732CC65299C5ACD0035F1FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB2841232992A499003B93BB /* SlumbeRApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,7 +138,6 @@
 				6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */,
 				6732CC66299C5ADD0035F1FC /* DataController.swift */,
 				6732CC65299C5ACD0035F1FC /* Model */,
-				CB2841232992A499003B93BB /* SlumbeRApp.swift */,
 				CB2841312992A962003B93BB /* Views */,
 				CB2841272992A49A003B93BB /* Assets.xcassets */,
 				CB2841292992A49A003B93BB /* Preview Content */,
@@ -272,15 +272,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				67E5703929BFEAD10079D2D1 /* utils.swift in Sources */,
-				CB2841342992A9C4003B93BB /* HomeView.swift in Sources */,
 				67B22D1C29C6C96C00EECEA3 /* csmoke.mlmodel in Sources */,
 				67B22D1A29C6C96C00EECEA3 /* cexerfreq.mlmodel in Sources */,
 				6732CC62299C153E0035F1FC /* DataModel.xcdatamodeld in Sources */,
 				67B22D1E29C6C98700EECEA3 /* deep.mlmodel in Sources */,
 				67B22D2429C6D44F00EECEA3 /* age.mlmodel in Sources */,
+				CBB589AE29C807D1005483D3 /* SlumbeRApp.swift in Sources */,
 				67B22D1B29C6C96C00EECEA3 /* cSleepE5.mlmodel in Sources */,
-				CB2841242992A499003B93BB /* SlumbeRApp.swift in Sources */,
 				67B22D1929C6C96C00EECEA3 /* cgender.mlmodel in Sources */,
+				CBB3CC0429C803A800C0030B /* HomeView.swift in Sources */,
 				67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */,
 				CB2841362992ACC0003B93BB /* TabBar.swift in Sources */,
 				429E40C929A339FC0056A9C0 /* MainMenu.swift in Sources */,
