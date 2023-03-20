@@ -24,6 +24,7 @@ struct TabBar: View {
                     Label("ML", systemImage: "lightbulb")
                 }
         }
+        .preferredColorScheme(.dark)
     }
 }
 

@@ -32,7 +32,7 @@ struct SleepDataChart:
 
 
     // Define the start and end date to fetch sleep data
-    let startDate = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
+    let startDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
     let endDate = Date()
 
 
