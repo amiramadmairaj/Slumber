@@ -160,15 +160,15 @@ func querySleepDataML() {
                 let duration = endDate.timeIntervalSince(startDate)
                 switch value {
                 case HKCategoryValueSleepAnalysis.asleepREM.rawValue:
-                    myDict["sleepDuration"]! += duration
+                    //myDict["sleepDuration"]! += duration
                     myDict["remPercent"]! += duration
                 case HKCategoryValueSleepAnalysis.awake.rawValue:
                     awakey += duration
-                case HKCategoryValueSleepAnalysis.asleepCore.rawValue:
-                    myDict["sleepDuration"]! += duration
                 case HKCategoryValueSleepAnalysis.asleepDeep.rawValue:
-                    myDict["sleepDuration"]! += duration
+                    //myDict["sleepDuration"]! += duration
                     myDict["deepPercent"]! += duration
+                case HKCategoryValueSleepAnalysis.asleepUnspecified.rawValue:
+                    myDict["sleepDuration"]! += duration
                 default:
                     continue
                 }
@@ -176,6 +176,7 @@ func querySleepDataML() {
         }
         myDict["deepPercent"]! = myDict["deepPercent"]!/(myDict["sleepDuration"]! + awakey)
         myDict["remPercent"]! = myDict["remPercent"]!/(myDict["sleepDuration"]! + awakey)
+        myDict["sleepDuration"]! /= 3600
         print("HELLO LOOK HERE")
         print(myDict)
         
