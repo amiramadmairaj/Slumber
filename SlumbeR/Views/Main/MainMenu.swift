@@ -8,7 +8,7 @@ var myGlobalList: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
 
 
 struct SleepDataChart:
-
+   
     View {
     // Initialize HealthKit store
     let healthStore = HKHealthStore()
@@ -17,7 +17,12 @@ struct SleepDataChart:
 
 
 
+    // Load Profile
+    @Environment(\.managedObjectContext) var managedContext
+    @FetchRequest(sortDescriptors: []) var userProfiles: FetchedResults<UserProfile>
+    
     // Define properties to hold sleep data
+    
     @State var sleepSamples: [HKCategorySample] = []
     @State var sleepHours: [Double] = []
     @State var sleepData: [Double] = [0.0, 0.0, 0.0, 0.0]
@@ -57,14 +62,10 @@ struct SleepDataChart:
 
     var body: some View {
         VStack {
+            let curUser = userProfiles[0]
             if !sleepHours.isEmpty == false {
-                Text("\(greetingLogic()), \("Reisha")")
-//                let _ = print(querySleepData())
-//                Text("\(sleepData[0])")
-//                ForEach(sleepData.indices, id: \.self) { index in
-//                                    Text("\(sleepData[index])")
-//                                }
-//
+                Text("\(greetingLogic()), \(curUser.name ?? "No Name")")
+
                 Chart{
                     BarMark(x: .value("Name", "Awake"),
                             y: .value("Sales", sleepData[0])

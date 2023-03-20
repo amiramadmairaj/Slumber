@@ -205,7 +205,6 @@ struct HomeView: View{
 }
 struct FirstTimeSetupView: View{
     
-    
     // below environment injects core data context into this scope
     @Environment(\.managedObjectContext) var managedContext
     // this should fetch an empty list of profiles.
@@ -305,55 +304,3 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

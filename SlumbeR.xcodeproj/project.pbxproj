@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421F074529C8310C00CCA8D9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 421F074329C8310C00CCA8D9 /* Model.xcdatamodeld */; };
 		429E40C929A339FC0056A9C0 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429E40C829A339FC0056A9C0 /* MainMenu.swift */; };
 		42EABD7C2995BB7B00494F25 /* UserSleepInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EABD7B2995BB7B00494F25 /* UserSleepInputView.swift */; };
-		6732CC62299C153E0035F1FC /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */; };
 		6732CC67299C5ADD0035F1FC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6732CC66299C5ADD0035F1FC /* DataController.swift */; };
 		67B22D1929C6C96C00EECEA3 /* cgender.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1529C6C96C00EECEA3 /* cgender.mlmodel */; };
 		67B22D1A29C6C96C00EECEA3 /* cexerfreq.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D1629C6C96C00EECEA3 /* cexerfreq.mlmodel */; };
@@ -49,10 +49,10 @@
 
 /* Begin PBXFileReference section */
 		421371BB29A38B75008FAB04 /* SlumbeR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlumbeR.entitlements; sourceTree = "<group>"; };
+		421F074429C8310C00CCA8D9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4294803B29A3873700436DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		429E40C829A339FC0056A9C0 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		42EABD7B2995BB7B00494F25 /* UserSleepInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSleepInputView.swift; sourceTree = "<group>"; };
-		6732CC61299C153E0035F1FC /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6732CC66299C5ADD0035F1FC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		67B22D1529C6C96C00EECEA3 /* cgender.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cgender.mlmodel; sourceTree = "<group>"; };
 		67B22D1629C6C96C00EECEA3 /* cexerfreq.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cexerfreq.mlmodel; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				67B22D2129C6C9B800EECEA3 /* rem.mlmodel */,
 				67B22D1D29C6C98700EECEA3 /* deep.mlmodel */,
 				67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */,
-				6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */,
+				421F074329C8310C00CCA8D9 /* Model.xcdatamodeld */,
 				6732CC66299C5ADD0035F1FC /* DataController.swift */,
 				CB292BD429C80B9A0008EA09 /* SlumbeRApp.swift */,
 				CB2841312992A962003B93BB /* Views */,
@@ -269,10 +269,10 @@
 				67E5703929BFEAD10079D2D1 /* utils.swift in Sources */,
 				67B22D1C29C6C96C00EECEA3 /* csmoke.mlmodel in Sources */,
 				67B22D1A29C6C96C00EECEA3 /* cexerfreq.mlmodel in Sources */,
-				6732CC62299C153E0035F1FC /* DataModel.xcdatamodeld in Sources */,
 				67B22D1E29C6C98700EECEA3 /* deep.mlmodel in Sources */,
 				67B22D2429C6D44F00EECEA3 /* age.mlmodel in Sources */,
 				CB292BD629C80BCE0008EA09 /* SlumbeRApp.swift in Sources */,
+				421F074529C8310C00CCA8D9 /* Model.xcdatamodeld in Sources */,
 				67B22D1B29C6C96C00EECEA3 /* cSleepE5.mlmodel in Sources */,
 				67B22D1929C6C96C00EECEA3 /* cgender.mlmodel in Sources */,
 				CB292BD729C80BD10008EA09 /* HomeView.swift in Sources */,
@@ -530,13 +530,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		6732CC60299C153E0035F1FC /* DataModel.xcdatamodeld */ = {
+		421F074329C8310C00CCA8D9 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6732CC61299C153E0035F1FC /* DataModel.xcdatamodel */,
+				421F074429C8310C00CCA8D9 /* Model.xcdatamodel */,
 			);
-			currentVersion = 6732CC61299C153E0035F1FC /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
+			currentVersion = 421F074429C8310C00CCA8D9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
