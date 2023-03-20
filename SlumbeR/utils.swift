@@ -7,14 +7,14 @@
 
 import CoreML
 
-func getSleepEff(age: Int,
-                 gender: String,
-                 sleepduration: Double,
-                 remsleeppercentage: Double,
-                 deepsleeppercentage: Double,
-                 smokingstatus: String,
-                 exercisefrequency: Double) -> Double {
-    
+func getSleepEff(age: Double,
+                 gender: Double,
+                 sleepDuration: Double,
+                 remSleepPerc: Double,
+                 deepSleepPerc: Double,
+                 smoking: Double,
+                 exerciseFreq: Double) -> Double {
+    // Uses regressor to predict sleep efficiency. Generates how "well" you have slept. Core utility score function.
     
     do {
         
@@ -30,17 +30,17 @@ func getSleepEff(age: Int,
         
         
         
-        guard let model = try? SleepE(configuration: MLModelConfiguration()) else {
+        guard let model = try? SleepE5(configuration: MLModelConfiguration()) else {
             fatalError("Unable to load model")
         }
         
-        let input = SleepEInput(Age: Double(age),
+        let input = SleepE5Input(Age: age,
                                 Gender: gender,
-                                Sleepduration: sleepduration,
-                                REMsleeppercentage: remsleeppercentage,
-                                Deepsleeppercentage: deepsleeppercentage,
-                                Smokingstatus: smokingstatus,
-                                Exercisefrequency: exercisefrequency)
+                                Sleepduration: sleepDuration,
+                                REMsleeppercentage: remSleepPerc,
+                                Deepsleeppercentage: deepSleepPerc,
+                                Smokingstatus: smoking,
+                                Exercisefrequency: exerciseFreq)
         
         guard let output = try? model.prediction(input: input) else {
             fatalError("Unable to make prediction")
@@ -60,7 +60,7 @@ func getREMSleepPerc(age: Double,
                      deepSleepPerc: Double,
                      smoking: Double,
                      exerciseFreq: Double) -> Double {
-    
+    // Uses regressor to predict REM sleep percentage. Predicts how much REM sleep you need.
     
     do {
         
@@ -93,7 +93,7 @@ func getDeepSleepPerc(age: Double,
                       remSleepPerc: Double,
                       smoking: Double,
                       exerciseFreq: Double) -> Double {
-    
+    // Uses regressor to predict deep sleep percentage. Predicts how much deep sleep you need.
     
     do {
         
@@ -127,6 +127,7 @@ func getAge(gender: Double,
             smoking: Double,
             exerciseFreq: Double) -> Double {
     
+    // Uses regressor to predict age. Functionality strictly for fun. Does not actually take part in producing in recommendation.
     
     do {
         
