@@ -19,6 +19,12 @@ let translucentBlack = Color(red: 0, green: 0, blue: 0, opacity: 0.9)
 var myDict = ["sleepDuration": 0.0, "remPercent": 0.0, "deepPercent": 0.0]
 
 
+struct identification {
+    // stores a global variable of userID, queried for multiple user profile.
+    // positive number means initialized. -1 for uninitialized value.
+    static var currentUserID = -1
+}
+
 
 struct FirstAccessView: View{
     // first time access user get to see this view.
@@ -32,7 +38,7 @@ struct FirstAccessView: View{
                     .foregroundColor(themeColor)
                     .shadow(color: themeColor, radius: 16)
                     .shadow(color: themeColor, radius: 16)
-                NavigationLink(destination: FirstTimeSetupView()){
+                NavigationLink(destination: FirstTimeSetupView().navigationBarBackButtonHidden(true)){
                     Text("Let's get started!")
                 }
             }
@@ -52,6 +58,7 @@ struct DebugView: View{
                     Text("User height: \(user.height)")
                     Text("User weight: \(user.weight)")
                     Text("User age: \(user.age)")
+                    Text("User ID: \(user.uid)")
                 }
                 
                 Button("Delete") {
@@ -60,10 +67,9 @@ struct DebugView: View{
                     }
                     try? managedContext.save()
                 }
-                NavigationLink("First Access", destination: FirstAccessView())
+                NavigationLink("First Access", destination: FirstAccessView().navigationBarBackButtonHidden(true))
                 NavigationLink("TabBar", destination: TabBar())
                 NavigationLink("ML Debug",destination: DebugMLView())
-                    .navigationBarHidden(true)
             }
             .preferredColorScheme(.dark)
         }
@@ -73,7 +79,7 @@ struct DebugView: View{
 
 struct DebugMLView: View {
     @Environment(\.managedObjectContext) var managedContext
-    @FetchRequest(sortDescriptors: []) var userProfiles: FetchedResults<UserProfile>
+    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "uid == %i", identification.currentUserID)) var userProfiles: FetchedResults<UserProfile>
     var body: some View {
         VStack {
             let curUser = userProfiles[0]
@@ -225,19 +231,19 @@ struct FirstTimeSetupView: View{
         // this function attempts to create a new UserProfile object and store it in the
         // NSManagedObjectContext manageContext.
         // not all attributes are stored at this moment.
-        if (userProfiles.count == 0) {
-            let newProf = UserProfile(context: managedContext)
-            newProf.age = age
-            newProf.height = height
-            newProf.weight = weight
-            newProf.name = name
-            newProf.gender = gender
-            newProf.smokes = smokes
-            newProf.avgExercise = avgExercise
-            newProf.firstAccess = false
-            // no error handling as of now
-            try? managedContext.save()
-        }
+        let newProf = UserProfile(context: managedContext)
+        newProf.age = age
+        newProf.height = height
+        newProf.weight = weight
+        newProf.name = name
+        newProf.gender = gender
+        newProf.smokes = smokes
+        newProf.avgExercise = avgExercise
+        newProf.firstAccess = false
+        newProf.uid = Int16(userProfiles.count + 1)
+        identification.currentUserID = Int(newProf.uid)
+        // no error handling as of now
+        try? managedContext.save()
     }
     
     var body: some View{
@@ -289,7 +295,7 @@ struct FirstTimeSetupView: View{
             // the "combined" Done button and navigation button.
             // the createProfile function is used when the next view in the navigation
             // appears.
-            NavigationLink(destination: FirstTimeSetupSleepView()) {
+            NavigationLink(destination: FirstTimeSetupSleepView().navigationBarBackButtonHidden(true)) {
                 Text("Next").frame(alignment: .bottom)
             }
         }

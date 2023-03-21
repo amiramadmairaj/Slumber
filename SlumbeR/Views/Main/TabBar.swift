@@ -19,9 +19,9 @@ struct TabBar: View {
                 .tabItem{
                     Label("Tips", systemImage: "lightbulb")
                 }
-            DebugMLView()
+            ProfilesView()
                 .tabItem{
-                    Label("ML", systemImage: "lightbulb")
+                    Label("Profiles", systemImage: "gear")
                 }
         }
         .preferredColorScheme(.dark)

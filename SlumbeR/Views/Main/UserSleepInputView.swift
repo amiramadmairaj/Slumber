@@ -38,7 +38,7 @@ struct FirstTimeSetupSleepView: View {
                 }
             }
             VStack{
-                NavigationLink(destination: TabBar()){
+                NavigationLink(destination: TabBar().navigationBarBackButtonHidden(true)){
                     Text("Next").frame(alignment: .bottom)
                 }
             }

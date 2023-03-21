@@ -20,6 +20,7 @@
 		67B22D2229C6C9B800EECEA3 /* rem.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D2129C6C9B800EECEA3 /* rem.mlmodel */; };
 		67B22D2429C6D44F00EECEA3 /* age.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D2329C6D44F00EECEA3 /* age.mlmodel */; };
 		67B22D2629C7D86000EECEA3 /* SleepE5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D2529C7D86000EECEA3 /* SleepE5.mlmodel */; };
+		67B22D2829C941F700EECEA3 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B22D2729C941F700EECEA3 /* ProfilesView.swift */; };
 		67E5703929BFEAD10079D2D1 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703829BFEAD10079D2D1 /* utils.swift */; };
 		67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */; };
 		CB2841282992A49A003B93BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2841272992A49A003B93BB /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		67B22D2129C6C9B800EECEA3 /* rem.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = rem.mlmodel; sourceTree = "<group>"; };
 		67B22D2329C6D44F00EECEA3 /* age.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = age.mlmodel; sourceTree = "<group>"; };
 		67B22D2529C7D86000EECEA3 /* SleepE5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepE5.mlmodel; sourceTree = "<group>"; };
+		67B22D2729C941F700EECEA3 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
 		67E5703829BFEAD10079D2D1 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		67E5703C29BFEB770079D2D1 /* SleepE.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepE.mlmodel; sourceTree = "<group>"; };
 		CB2841202992A499003B93BB /* SlumbeR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlumbeR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				CB2841352992ACC0003B93BB /* TabBar.swift */,
 				429E40C829A339FC0056A9C0 /* MainMenu.swift */,
 				CBB9A055299C716D00E6F50A /* TipsView.swift */,
+				67B22D2729C941F700EECEA3 /* ProfilesView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				421F074529C8310C00CCA8D9 /* Model.xcdatamodeld in Sources */,
 				67B22D1B29C6C96C00EECEA3 /* cSleepE5.mlmodel in Sources */,
 				67B22D1929C6C96C00EECEA3 /* cgender.mlmodel in Sources */,
+				67B22D2829C941F700EECEA3 /* ProfilesView.swift in Sources */,
 				CB292BD729C80BD10008EA09 /* HomeView.swift in Sources */,
 				67E5703D29BFEB770079D2D1 /* SleepE.mlmodel in Sources */,
 				CB2841362992ACC0003B93BB /* TabBar.swift in Sources */,
