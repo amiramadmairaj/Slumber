@@ -65,6 +65,10 @@ struct SleepDataChart:
                 let curUser = (selected.isEmpty ? userProfiles[0]: selected[0])
                 if !sleepHours.isEmpty == false {
                     Text("\(greetingLogic()), \(curUser.name ?? "No Name")")
+                        .font(.title)
+                        .fontWeight(.bold)
+
+                    
                     Chart{
                         BarMark(x: .value("Name", "Awake"),
                                 y: .value("Sales", sleepData[0])

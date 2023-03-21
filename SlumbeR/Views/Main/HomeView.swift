@@ -1,9 +1,3 @@
-//
-//  HomeView.swift
-//  SlumbeR
-//
-//  Created by Reisha Ladwa on 2/7/23.
-//
 
 import SwiftUI
 import HealthKit
@@ -226,6 +220,11 @@ struct FirstTimeSetupView: View{
     @State private var gender = false
     @State private var avgExercise: Int16 = 0
     
+    @State private var feet = 0
+    @State private var inches = 0
+    @State private var w = 0
+    @State private var a = 0
+    @State private var e = 0
     
     func createNewProfile(age: Int16, height: Int16, weight: Int16, name: String, gender: Bool, smokes: Bool, avgExercise: Int16) {
         // this function attempts to create a new UserProfile object and store it in the
@@ -249,41 +248,126 @@ struct FirstTimeSetupView: View{
     var body: some View{
         Text("Let's get to know you a little!")
             .padding()
+            .font(.title)
+            .fontWeight(.bold)
+        
         Form{
             Group{
                 Section(header: Text("What Should We Call You?")){
                     TextField("Username", text: $name)
                         .keyboardType(.default)
+                    
                 }
             }
+            
+            
             Group{
-                // need fixing the UI it looks weird right now.
+                
                 Section(header: Text("Personal Information")) {
+                    
+                    
                     Text("What is your age?")
-                    TextField("Age", value: $age, format:.number)
+                    Picker(
+                        selection: $a,
+                        label: Text("Age"),
+                        content: {
+                            ForEach(0..<1000, id: \.self) {aaa in
+                                Text("\(aaa) years old")
+                                    .tag(aaa)
+                                
+                            }
+                            
+                        })
+                    .pickerStyle(.wheel)
+                    .frame(width: 150, height: 110)
+                    
+                    
+                    Text("What is your weight?")
+                    Picker(
+                        selection: $w,
+                        label: Text("Weight"),
+                        content: {
+                            ForEach(0..<1000, id: \.self) {www in
+                                Text("\(www) lbs")
+                                    .tag(www)
+                                
+                            }
+                            
+                        })
+                    .pickerStyle(.wheel)
+                    .frame(width: 150, height: 110)
+                    
+                    
+                    
                     Text("What is your gender?")
                     Picker(selection: $gender, label: Text("")) {
                         Text("Male").tag(true)
                         Text("Female").tag(false)
                     }
-                    Text("What is your weight?")
-                    TextField("Weight (in lbs)", value: $weight, format: .number)
+                    .frame(width: 200, height: 100)
+                    .pickerStyle(.wheel)
+                    
+                    
+                    
+                    
                     Text("How tall are you?")
-                    TextField("Height (in inches)", value: $height, format:.number)
+                    HStack {
+                        Picker("Feet", selection: $feet) {
+                            ForEach(0..<9) { feet in
+                                Text("\(feet) ft").tag(feet)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .frame(width: 150, height: 110)
+                        
+                        
+                        Picker("Inches", selection: $inches) {
+                            ForEach(0..<12) { inch in
+                                Text("\(inch) in").tag(inch)
+                                
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .frame(width: 150, height: 110)
+                    }
+                    
+                    
                     
                 }
+                
+                
                 Section(header: Text("Health Questionnaire")) {
                     Text("How many times (on average) do you exercise a week?")
-                    TextField("Weekly Exercise", value: $avgExercise, format:.number)
+                    Picker(
+                        selection: $e,
+                        label: Text("Weekly Exercise"),
+                        content: {
+                            ForEach(0..<20, id: \.self) {e in
+                                Text("\(e) times")
+                                    .tag(e)
+                                
+                            }
+                            
+                        })
+                    .pickerStyle(.wheel)
+                    .frame(width: 150, height: 110)
+                    
+                    
                     Text("Do you smoke?")
                     Picker(selection: $smokes, label: Text("")) {
                         Text("Yes").tag(true)
                         Text("No").tag(false)
                     }
+                    .frame(width: 200, height: 100)
+                    .pickerStyle(.wheel)
                 }
             }
-        }
-        .onDisappear{ createNewProfile(age: self.age,
+    }.onDisappear{
+            self.height = Int16(truncatingIfNeeded:(feet * 12) + inches)
+            self.weight = Int16(truncatingIfNeeded: w)
+            self.age =  Int16(truncatingIfNeeded: a)
+            self.avgExercise =  Int16(truncatingIfNeeded: e)
+            createNewProfile(age: self.age,
                                        height: self.height,
                                        weight: self.weight,
                                        name: self.name,
@@ -309,3 +393,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
