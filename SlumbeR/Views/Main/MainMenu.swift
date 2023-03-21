@@ -3,7 +3,7 @@ import HealthKit
 import Charts
 import SwiftUICharts
 
-// made a global list for list of sleep stages. 0: awake; 1: REM; 2: Core; 3: Deep
+// made a global list for list of sleep stages. 0: awake; 1: REM; 2: Core; 3: Deep, 4:total
 var myGlobalList: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
 
 
@@ -14,8 +14,6 @@ struct SleepDataChart:
     let healthStore = HKHealthStore()
     let calendar = Calendar.current
     let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
-
-
 
     // Load Profile
     @Environment(\.managedObjectContext) var managedContext
@@ -69,38 +67,38 @@ struct SleepDataChart:
                     BarMark(x: .value("Name", "Awake"),
                             y: .value("Sales", sleepData[0])
                     )
-                    .annotation(position: .overlay, alignment: .center) {
-                        Text("\(sleepData[0], format: .number.precision(.fractionLength(2)))")
-                            .foregroundColor(.white)
-                    }
+//                    .annotation(position: .overlay, alignment: .center) {
+//                        Text("\(sleepData[0], format: .number.precision(.fractionLength(2)))")
+//                            .foregroundColor(.white)
+//                    }
                     BarMark(x: .value("Name", "REM"),
                             y: .value("Sales", sleepData[1])
                     )
-                    .annotation(position: .overlay, alignment: .center) {
-                        Text("\(sleepData[1], format: .number.precision(.fractionLength(2)))")
-                            .foregroundColor(.white)
-                    }
+//                    .annotation(position: .overlay, alignment: .center) {
+//                        Text("\(sleepData[1], format: .number.precision(.fractionLength(2)))")
+//                            .foregroundColor(.white)
+//                    }
                     BarMark(x: .value("Name", "Core"),
                             y: .value("Sales", sleepData[2])
                     )
-                    .annotation(position: .overlay, alignment: .center) {
-                        Text("\(sleepData[2], format: .number.precision(.fractionLength(2)))")
-                            .foregroundColor(.white)
-                    }
+//                    .annotation(position: .overlay, alignment: .center) {
+//                        Text("\(sleepData[2], format: .number.precision(.fractionLength(2)))")
+//                            .foregroundColor(.white)
+//                    }
                     BarMark(x: .value("Name", "Deep"),
                             y: .value("Sales", sleepData[3])
                     )
-                    .annotation(position: .overlay, alignment: .center) {
-                        Text("\(sleepData[3], format: .number.precision(.fractionLength(2)))")
-                            .foregroundColor(.white)
-                    }
+//                    .annotation(position: .overlay, alignment: .center) {
+//                        Text("\(sleepData[3], format: .number.precision(.fractionLength(2)))")
+//                            .foregroundColor(.white)
+//                    }
                     BarMark(x: .value("Name", "Total"),
                             y: .value("Sales", sleepData[4])
                     )
-                    .annotation(position: .overlay, alignment: .center) {
-                        Text("\(sleepData[4], format: .number.precision(.fractionLength(2)))")
-                            .foregroundColor(.white)
-                    }
+//                    .annotation(position: .overlay, alignment: .center) {
+//                        Text("\(sleepData[4], format: .number.precision(.fractionLength(2)))")
+//                            .foregroundColor(.white)
+//                    }
                 }
                 .chartYScale(domain: 0...sleepData[4])
 
@@ -110,10 +108,10 @@ struct SleepDataChart:
         }
         .onAppear {
             authorizeHealthKit()
-            print("test")
+//            print("test")
             querySleepData()
-            print("awake, rem, core, deep")
-            print(myGlobalList)
+//            print("awake, rem, core, deep")
+//            print(myGlobalList)
 
         }
     }
@@ -177,8 +175,10 @@ struct SleepDataChart:
                     }
                     
                 }
+                let total = myGlobalList[1]/3600.0 + myGlobalList[2]/3600.0 + myGlobalList[3]/3600.0 + myGlobalList[4]/3600.0
                 // Update the sleepData array with the duration of each sleep stage
-                sleepData = [myGlobalList[0]/3600.0, myGlobalList[1]/3600.0, myGlobalList[2]/3600.0, myGlobalList[3]/3600.0, myGlobalList[4]/3600.0]
+                sleepData = [myGlobalList[0]/3600.0, myGlobalList[1]/3600.0, myGlobalList[2]/3600.0, myGlobalList[3]/3600.0, total]
+                print(sleepData)
 //                sleepData = myGlobalList
             }
         }
